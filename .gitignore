@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/KursCpp/v15
+/KursCpp/Debug
+*.user
+*.filters
