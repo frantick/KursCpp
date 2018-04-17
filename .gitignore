@@ -34,3 +34,5 @@
 /KursCpp/Debug
 *.user
 *.filters
+/x64/Debug
+/KursCpp/x64/Debug

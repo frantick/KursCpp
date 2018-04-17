@@ -253,7 +253,8 @@ void Rozdzial6::Cwiczenie_06()
 void Rozdzial6::Cwiczenie_07()
 {
 	string ch;
-	int a = 0, b = 0, c = 0;
+	int samogloska = 0, spolgloska = 0, inne = 0;
+	cout << "Podaj zdanie do analizy, q konczy program." << endl;
 	cin >> ch;
 	while (cin.good() && ch[0] != 'q' && ch[0] != 'Q')
 	{
@@ -264,20 +265,20 @@ void Rozdzial6::Cwiczenie_07()
 				ch[0] == 'i' ||
 				ch[0] == 'o' ||
 				ch[0] == 'u')
-				a++;
+				samogloska++;
 			else
-				b++;
+				spolgloska++;
 		}
 		else
 		{
-			c++;
+			inne++;
 		}
 
 		cin >> ch;
 	}
-	cout << a << " slow zaczynajacych sie od samoglosek" << endl;
-	cout << b << " slow zaczynajacych sie spolglosek" << endl;
-	cout << c << " slow ktore nie zaliczaja sie do tych kategorii" << endl;
+	cout << samogloska << " slow zaczynajacych sie od samoglosek" << endl;
+	cout << spolgloska << " slow zaczynajacych sie spolglosek" << endl;
+	cout << inne << " slow ktore nie zaliczaja sie do tych kategorii" << endl;
 }
 
 void Rozdzial6::Cwiczenie_08()
