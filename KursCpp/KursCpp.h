@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <fstream>
 
 using namespace std;
 
@@ -49,7 +50,7 @@ namespace Rozdzial6
 	void Cwiczenie_05();
 	void Cwiczenie_06();
 	void Cwiczenie_07(); 
-	void Cwiczenie_08();
+	void Cwiczenie_08(); // odczyt z pliku
 	void Cwiczenie_09();
 }
 

@@ -283,5 +283,29 @@ void Rozdzial6::Cwiczenie_07()
 
 void Rozdzial6::Cwiczenie_08()
 {
+	ifstream plikWejsciowy;
 
+	plikWejsciowy.open("test.txt", fstream::in);
+	if (!plikWejsciowy.is_open())
+	{
+		cout << "Plik nieznaleziony. koniec programu" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	char ch;
+	long double licznik = 0;
+	long double licznikBialychZnakow = 0;
+
+	while (plikWejsciowy.good() && plikWejsciowy.get(ch))
+	{
+		if (!isalnum(ch))
+		{
+			licznikBialychZnakow++;
+		}
+			licznik++;
+	}
+
+	cout << "W pliku znajduje sie " << licznik << " znakow." << endl;
+	cout << "Z czego " << licznikBialychZnakow << " to nie sa znaki alfanumeryczne." << endl;
+	plikWejsciowy.close();
 }
