@@ -1,3 +1,11 @@
-abc def ghi 123 5s4 ?!)@#
-abc def ghi 123 5s4 ?!)@#
-abc def ghi 123 5s4 ?!)@#
+5
+Pierwszy wplacajacy
+300
+Drugi wplacajacy
+10
+Trzeci wplacajacy
+75
+Czwarty wplacajacy
+50
+Piaty wplacajacy
+1000

@@ -283,10 +283,10 @@ void Rozdzial6::Cwiczenie_07()
 
 void Rozdzial6::Cwiczenie_08()
 {
-	ifstream plikWejsciowy;
+	ifstream fin;
 
-	plikWejsciowy.open("test.txt", fstream::in);
-	if (!plikWejsciowy.is_open())
+	fin.open("test.txt");
+	if (!fin.is_open())
 	{
 		cout << "Plik nieznaleziony. koniec programu" << endl;
 		exit(EXIT_FAILURE);
@@ -296,7 +296,7 @@ void Rozdzial6::Cwiczenie_08()
 	long double licznik = 0;
 	long double licznikBialychZnakow = 0;
 
-	while (plikWejsciowy.good() && plikWejsciowy.get(ch))
+	while (fin.good() && fin.get(ch))
 	{
 		if (!isalnum(ch))
 		{
@@ -307,5 +307,57 @@ void Rozdzial6::Cwiczenie_08()
 
 	cout << "W pliku znajduje sie " << licznik << " znakow." << endl;
 	cout << "Z czego " << licznikBialychZnakow << " to nie sa znaki alfanumeryczne." << endl;
-	plikWejsciowy.close();
+	fin.close();
+}
+
+void Rozdzial6::Cwiczenie_09()
+{
+	struct dane
+	{
+		string nazwisko;
+		double wplata;
+	};
+
+	ifstream fin;
+	fin.open("test.txt");
+	if (!fin.is_open())
+	{
+		cout << "Plik nieznaleziony. koniec programu" << endl;
+		exit(EXIT_FAILURE);
+	}
+	string linia;
+	getline(fin, linia);
+	int iloscWplat = atoi(linia.c_str());
+	dane *wplaty = new dane[iloscWplat];
+	for (int i = 0; i < iloscWplat; i++)
+	{
+		getline(fin, wplaty[i].nazwisko);
+		getline(fin, linia);
+		wplaty[i].wplata = atoi(linia.c_str());
+	}
+	cout << "Najwyzsze wplaty:" << endl;
+	bool flaga1 = false;
+	for (int i = 0; i < iloscWplat; i++)
+	{
+		if (wplaty[i].wplata >= 100)
+		{
+			cout <<"-" << wplaty[i].nazwisko << endl;
+			flaga1 = true;
+		}
+	}
+	if (!flaga1) cout << "brak" << endl;
+	cout << "Wplaty:" << endl;
+	bool flaga2 = false;
+	for (int i = 0; i < iloscWplat; i++)
+	{
+		if (wplaty[i].wplata < 100)
+		{
+			cout << "-" << wplaty[i].nazwisko << endl;
+			flaga2 = true;
+		}
+
+	}
+	if (!flaga2) cout << "brak" << endl;
+	delete[]wplaty;
+	fin.close();
 }
